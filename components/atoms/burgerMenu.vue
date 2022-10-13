@@ -1,53 +1,17 @@
 <script setup lang="ts">
 import { onMounted, ref} from "vue";
-  const links = [
-    {
-      name: "About",
-      link:"/about",
-      id: 1
-    },
-    {
-      name: 'My music',
-      link: "/music",
-      id: 2
-    },
-    {
-      name: 'Contacts',
-      link: "/contacts",
-      id: 3
-    },
-    {
-      name: 'Main',
-      link: "/",
-      id: 4
-    }
-  ];
-  const isVisible = ref(false); //для блока burger-menu__nav
-  const isActive = ref(false); //для смены класса burger-menu__button
 
-  // function checkSizeScreen(){
-  //   window.addEventListener("resize", () =>{
-  //     if(window.innerWidth >= 1200){
-  //       return true;
-  //     }
-  //     else{
-  //       return false;
-  //     }
-  //   })
-  // }
+  const isActive = ref(false); //для смены класса burger-menu__button
 
   const handler = (e:Event) => {
     isActive.value = !isActive.value;
-    isVisible.value = !isVisible.value;
   }
 
+  //onMounted отслеживает,если mobile version => isActive = false для вида бургера
    onMounted(() => {
     window.addEventListener("resize", () => {
-      if(window.innerWidth >= 1200){
-        isVisible.value = true;
-      }
-      else{
-        isVisible.value = false;
+      if(window.innerWidth < 1200){
+        isActive.value = false;
       }
     })
   });
@@ -64,22 +28,6 @@ import { onMounted, ref} from "vue";
      <span class="burger-menu__lines"></span>
    </nuxt-link>
  </div>
-  <div class="burger-menu__nav"
-       v-bind:class="{visible: isVisible}"
-  >
-    <ul class="burger-menu__list">
-      <nuxt-link
-          class="burger-menu__item"
-          :to="item.link"
-          v-for="item in links"
-          :key="item.id"
-      >
-        <li >
-          {{item.name}}
-        </li>
-      </nuxt-link>
-    </ul>
-  </div>
 </template>
 
 <style scoped lang="scss">
@@ -97,33 +45,9 @@ import { onMounted, ref} from "vue";
     .active span::after{
       transform: rotate(-45deg);
     }
-
-  .visible{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 250px;
-    background-color: #2f1949;
-    border-radius: 0 10px 10px 0;
-  }
   //-------------------------->
 
   .burger-menu{
-
-    &__nav{
-      display: none;
-    }
-
-    &__list{
-      list-style-type: none;
-    }
-
-    &__item{
-      cursor: pointer;
-      text-decoration: none;
-      color: white;
-    }
 
     &__button{
       position: fixed;
@@ -164,27 +88,6 @@ import { onMounted, ref} from "vue";
 
   @include breakpoint(large) {
     .burger-menu{
-
-      &__nav{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 70px;
-        background-color: #2f1949;
-        border-radius: 0;
-      }
-
-      &__list{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
-
-      &__item{
-        cursor: pointer;
-        margin-left: 56px;
-      }
 
       &__button{
         display: none;
