@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import CustomHeader from "~/components/moleculas/CustomHeader.vue";
+  import CustomHeader from "~/components/templates/CustomHeader.vue";
 </script>
 
 <template>

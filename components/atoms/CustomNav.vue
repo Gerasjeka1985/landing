@@ -47,7 +47,7 @@
       align-items: center;
       width: 100%;
       height: 70px;
-      background-color: #2f1949;
+      background-color:$color-primary-deep-purple;
       border-radius: 0;
 
       &__list{
