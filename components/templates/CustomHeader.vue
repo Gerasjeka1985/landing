@@ -3,53 +3,10 @@
   import BurgerMenu from "~/components/atoms/burgerMenu.vue";
   import CustomNav from "~/components/atoms/CustomNav.vue";
   import {CustomNavLinks} from "~/types/links";
-  import {CustomVideo} from "~/types/video";
   import {ref} from 'vue';
-  import CustomCarusel from "~/components/atoms/CustomCarusel.vue";
-
-
-  const videos: CustomVideo[] = [
-    {
-      id: 1,
-      name:"../assets/video/first.mp4",
-      title:'My video 1',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
-      data:'01.01.2001'
-    },
-    {
-      id: 2,
-      name:"../assets/video/first.mp4",
-      title:'My video 2',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
-      data:'01.02.2001'
-    },
-    {
-      id: 3,
-      name:"../assets/video/first.mp4",
-      title:'My video 3',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
-      data:'01.04.2001'
-    },
-    {
-      id: 4,
-      name:"../assets/video/first.mp4",
-      title:'My video 4',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
-      data:'01.04.2001'
-    },
-    {
-      id: 5,
-      name:"../assets/video/first.mp4",
-      title:'My video 5',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
-      data:'01.04.2001'
-    }
-  ];
 
   const isVisible = ref(false);
-
   const title = 'Metal Blondy';
-
   const links: CustomNavLinks[] = [
     {
       name: "About",
@@ -72,7 +29,6 @@
       id: 4
     }
   ];
-
   const visibleHandler = () => {
     isVisible.value = !isVisible.value
   }
@@ -96,7 +52,6 @@
       <custom-nav :links="links" class="header__nav" v-bind:class="{'visible' : isVisible}" />
       <burger-menu  @click="visibleHandler" class="header__burger" />
       <custom-main-photo class="header__photo" />
-      <custom-carusel :video="videos" />
   </div>
 </template>
 

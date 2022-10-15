@@ -9,26 +9,31 @@
 
 <template>
   <div class="card" v-for="item in videos" :key="item.id">
-    <div class="card__video">
-      <video  :src="item.name" type="video/mp4"></video>
-    </div>
-    <div class="card__description">
-      <h2 class="card__title">{{ item.title }}</h2>
-      <p class="card__text">{{ item.text }}</p>
-      <div class="card__data"><h4>{{ item.data }}</h4></div>
-    </div>
+      <div class="card__video">
+          <video controls :src="item.name" type="video/mp4"></video>
+      </div>
+      <div class="card__description">
+          <h2 class="card__title">{{ item.title }}</h2>
+          <p class="card__text">{{ item.text }}</p>
+          <div class="card__data">
+              <h4>
+                  {{ item.data }}
+              </h4>
+          </div>
+      </div>
   </div>
 </template>
 
 <style scoped lang="scss">
   @import 'assets/scss/_global.scss';
   .card{
+    z-index: 23;
     //margin: 10px 0;
     color: white;
     width: 250px;
     min-height: 380px;
     background: #2F2B2B;
-    border-radius: 30px 0px;
+    border-radius: 30px 0;
 
     &__video{
       width: 100%;
@@ -53,11 +58,11 @@
 
 @include breakpoint(large) {
   .card{
-    margin-left: 20px;
+    margin-right: 10px;
     width: 350px;
     height: 473px;
     background: #2F2B2B;
-    border-radius: 30px 0px;
+    border-radius: 30px 0;
   }
 }
 </style>

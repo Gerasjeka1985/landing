@@ -77,6 +77,8 @@ import { onMounted, ref} from "vue";
       content: "";
     }
 
+
+
     &__lines::before{
       transform: translateY(-10px);
     }

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import CustomVideoCard from "~/components/atoms/CustomVideoCard.vue";
   import {CustomVideo} from "~/types/video";
   import {ref} from 'vue';
 
@@ -37,25 +38,38 @@
       title:'My video 5',
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
       data:'01.04.2001'
+    },
+    {
+      id: 6,
+      name:"../assets/video/first.mp4",
+      title:'My video 6',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
+      data:'02.04.2001'
+    },
+    {
+      id: 7,
+      name:"../assets/video/first.mp4",
+      title:'My video 7',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugit impedit libero!',
+      data:'02.04.2011'
     }
   ];
 
   const props = defineProps<{
     videos: CustomVideo[]
   }>()
-  const moc = 0
-  const arr = [
-    {name: 'one', id: 1},
-    {name: 'two', id: 2},
-    {name: 'three', id: 3},
-    {name: 'four', id: 4},
-    {name: 'five', id: 5},
-    {name: 'six', id: 6},
-    {name: 'seven', id: 7},
-  ];
+  // const arr = [
+  //   {name: 'one', id: 1},
+  //   {name: 'two', id: 2},
+  //   {name: 'three', id: 3},
+  //   {name: 'four', id: 4},
+  //   {name: 'five', id: 5},
+  //   {name: 'six', id: 6},
+  //   {name: 'seven', id: 7},
+  // ];
 
   let offset = 0; //сещение от левго каря
-  const track = ref()
+  const track = ref() //сслыка на  div с классом  track
 
   function prev(){
     offset -= 350;
@@ -78,9 +92,7 @@
   <div class="wrapper">
     <div class="wrapper__roundabout">
       <div class="wrapper__track" ref="track">
-        <div class="wrapper__card" v-for="item in arr" :key="item.id">
-          {{item.name}}
-        </div>
+        <custom-video-card  :videos="videos" class="wrapper__item" />
       </div>
     </div>
     <button @click="prev()" class="wrapper__arrow-left">Prev</button>
@@ -97,7 +109,7 @@
     align-items: center;
     width: 100%;
     height: 900px;
-    background-color: #abc2f2;
+    background-color: #330a5b;
 
     &__roundabout{
       width: 80%;
@@ -113,7 +125,7 @@
       flex-direction: column;
     }
 
-    &__card{
+    &__item{
       display: flex;
       //margin: 10px 0;
       width: 250px;
@@ -134,7 +146,6 @@
       &__roundabout{
         width: 1050px;
         height: 473px;
-        border: 2px solid #f61212;
 
         & button{
           cursor: pointer;
@@ -146,35 +157,40 @@
         width: 2450px;
         flex-direction: row;
         left: 0;
-        transition: all ease 1s;
+        transition: all ease 0.5s;
       }
-      &__card{
+      &__item{
         justify-content: center;
         align-items: center;
         //margin: 0 10px;
         min-width: 350px;
         height: 473px;
-        outline: 2px solid green;
       }
 
       &__arrow-left{
         display: block;
         position: absolute;
+        cursor: pointer;
         left:15%;
         width: 40px;
         height: 60px;
-        border: 1px solid #FFFFFF;
-        border-radius: 10px 0px;
+        color: $color-primary-gray;
+        background-color: $color-primary-deep-purple;
+        outline: 1px solid $color-primary-gray;
+        border-radius: 10px 0;
       }
 
       &__arrow-right{
         display: block;
         position: absolute;
+        cursor: pointer;
         right: 14%;
         width: 40px;
         height: 60px;
-        border: 1px solid #FFFFFF;
-        border-radius: 10px 0px;
+        color: $color-primary-gray;
+        background-color: $color-primary-deep-purple;
+        outline: 1px solid $color-primary-gray;
+        border-radius: 10px 0;
       }
     }
   }
