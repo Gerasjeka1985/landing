@@ -14,7 +14,10 @@
 
 <style scoped lang="scss">
 @import 'assets/scss/_global.scss';
-
+.content{
+  width: 100%;
+  height: 100vh;
+}
 
 
 @include breakpoint(large) {}

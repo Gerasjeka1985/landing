@@ -75,7 +75,7 @@
   //----------------------------------
   .header{
     width: 100%;
-    min-height: 100vh;
+    min-height: 999px;
     position: relative;
 
     &__title{
@@ -85,14 +85,14 @@
 
 @include breakpoint(large) {
   .header{
-    height: 70px;
+    min-height: 1064px;
 
     &__title{
       display: block;
       position: absolute;
       top: 15px;
       left: 120px;
-      font-family: 'Vampiro One';
+      font-family: 'Vampiro One',sans-serif;
       color: white;
     }
 
@@ -101,9 +101,7 @@
       height: 70px;
     }
 
-    &__burger{
-      display: none;
-    }
+    &__burger {display: none;}
   }
 }
 </style>

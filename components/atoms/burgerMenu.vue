@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { onMounted, ref} from "vue";
+  import { onMounted, ref} from "vue";
 
   const isActive = ref(false); //для смены класса burger-menu__button
 
-  const handler = (e:Event) => {
+  const handler = () => {
     isActive.value = !isActive.value;
   }
 
@@ -34,17 +34,11 @@ import { onMounted, ref} from "vue";
   @import 'assets/scss/_global.scss';
 
   // class to toggle burger-menu
-    .active span::before{
-      transform: rotate(45deg);
-    }
+    .active span::before {transform: rotate(45deg);}
 
-    .active span{
-      height: 0;
-    }
+    .active span {height: 0;}
 
-    .active span::after{
-      transform: rotate(-45deg);
-    }
+    .active span::after {transform: rotate(-45deg);}
   //-------------------------->
 
   .burger-menu{
@@ -56,7 +50,7 @@ import { onMounted, ref} from "vue";
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: black;
+      background: rgba(0,0,0,0);
     }
 
     &__lines,
@@ -68,7 +62,7 @@ import { onMounted, ref} from "vue";
       left: 50%; margin-left: -15px;
       width: 30px;
       height: 3px;
-      background-color: #ffffff;
+      background-color: $color-primary-gray;
       transition: 0.2s;
     }
 
@@ -77,23 +71,15 @@ import { onMounted, ref} from "vue";
       content: "";
     }
 
+    &__lines::before {transform: translateY(-10px);}
 
-
-    &__lines::before{
-      transform: translateY(-10px);
-    }
-
-    &__lines::after{
-      transform: translateY(8px);
-    }
+    &__lines::after {transform: translateY(8px);}
   }
 
   @include breakpoint(large) {
     .burger-menu{
 
-      &__button{
-        display: none;
-      }
+      &__button {display: none;}
     }
   }
 </style>

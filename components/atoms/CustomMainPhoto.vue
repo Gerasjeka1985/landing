@@ -4,7 +4,6 @@
 
 <template>
   <div class="image">
-    <div class="image__shadow"></div>
       <img :src="image" alt="Ola" />
   </div>
 </template>
@@ -15,16 +14,6 @@
     width: 100%;
     height: 1000px;
 
-    &__shadow{
-      position: absolute;
-      top: 0;
-      z-index: 12;
-      width: 100%;
-      height: 1100px;
-      background-color: #330a5b;
-      opacity: 0.3;
-    }
-
     & img{
       width: 100%;
       height: 100%;
@@ -33,6 +22,6 @@
   }
 
   @include breakpoint(large) {
-
+    .image{}
   }
 </style>

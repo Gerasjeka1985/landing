@@ -127,10 +127,8 @@
 
     &__item{
       display: flex;
-      //margin: 10px 0;
       width: 250px;
       min-height: 380px;
-      background-color: aqua;
     }
 
     &__arrow-left,
@@ -162,7 +160,6 @@
       &__item{
         justify-content: center;
         align-items: center;
-        //margin: 0 10px;
         min-width: 350px;
         height: 473px;
       }
@@ -174,10 +171,10 @@
         left:15%;
         width: 40px;
         height: 60px;
+        border-radius: 10px 0;
         color: $color-primary-gray;
         background-color: $color-primary-deep-purple;
-        outline: 1px solid $color-primary-gray;
-        border-radius: 10px 0;
+        outline: 2px solid $color-primary-gray;
       }
 
       &__arrow-right{
@@ -187,10 +184,10 @@
         right: 14%;
         width: 40px;
         height: 60px;
+        border-radius: 10px 0;
         color: $color-primary-gray;
         background-color: $color-primary-deep-purple;
-        outline: 1px solid $color-primary-gray;
-        border-radius: 10px 0;
+        outline: 2px solid $color-primary-gray;
       }
     }
   }

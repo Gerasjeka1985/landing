@@ -2,19 +2,7 @@
   const props = defineProps<{
     title:string
   }>()
-
-  const description =
-      " Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-      "        A architecto asperiores aut dolore dolorem doloribus eum\n" +
-      "        harum iusto molestias natus, odit placeat sint sit soluta voluptatibus?\n" +
-      "        Consectetur cupiditate deserunt dolor expedita ipsa qui recusandae\n" +
-      "        repellendus reprehenderit rerum ullam. Ea fuga, fugit! Animi aut\n" +
-      "        dicta esse fuga quos repellat sed tempore voluptates voluptatibus? Adipisci alias\n" +
-      "        aperiam aspernatur assumenda at aut consectetur cumque deleniti dolore ea eligendi\n" +
-      "        est eveniet ex excepturi fuga fugiat harum hic id, illo incidunt inventore ipsam,\n" +
-      "        iusto nobis non nulla officia omnis placeat quidem quis quod quos reiciendis\n" +
-      "        sapiente sint temporibus totam voluptas, voluptate. Est illo ipsa reprehenderit soluta."
-
+  const description = " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur enim error illo nihil sint? Ab consequuntur laboriosam nisi nulla perferendis sed tempore voluptatem! Accusantium at atque, consectetur cumque enim expedita fugiat ipsa laudantium maxime omnis praesentium repellendus, sed sit voluptas voluptates? Aliquid aperiam autem, blanditiis distinctio dolore doloremque dolores, eaque eligendi eos illo inventore ipsa labore laboriosam laudantium magni maiores minima nobis odio quae quos ratione reprehenderit suscipit totam ut vel voluptatem voluptates! Accusantium aperiam asperiores corporis cumque debitis deserunt eos error est facere facilis id impedit incidunt, inventore ipsam itaque laudantium magnam minus molestiae mollitia nam neque nihil numquam odio omnis porro quo reprehenderit rerum saepe sapiente tenetur. Minus.";
   const list = [
     {
       name: "Based in Moscow"
@@ -29,6 +17,7 @@
       name: "prefer style MetalCore"
     }
   ];
+  const picture = "https://sun9-4.userapi.com/impg/SPYot4iVtpWJgpjcpJGI3OYAiy3WXRlQLv2HLQ/FoZQDlDuOFs.jpg?size=1600x918&quality=96&sign=5068bd514f8ed6a521d4503ae5ee96f0&type=album";
 </script>
 
 <template>
@@ -45,38 +34,55 @@
       </div>
     </div>
     <div class="container__photo">
-      <img src="https://sun9-4.userapi.com/impg/SPYot4iVtpWJgpjcpJGI3OYAiy3WXRlQLv2HLQ/FoZQDlDuOFs.jpg?size=1600x918&quality=96&sign=5068bd514f8ed6a521d4503ae5ee96f0&type=album" alt="icon" />
+      <img :src="picture" alt="icon" />
     </div>
-
   </div>
 </template>
 
 <style scoped lang="scss">
   @import 'assets/scss/_global.scss';
+
   .container{
     width: 100%;
-    height: 520px;
+    min-height: 10%;
     background-color: $color-primary-deep-purple;
     color: $color-primary-gray;
+
+    &__content{width: 100%}
 
     &__title{
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Vampiro One'
+      font-family: 'Vampiro One', sans-serif;
     }
 
-    &__photo{
-      display: none;
+    &__description {text-align: center;}
+
+    &__list{
+      width: 100%;
+      min-height: 200px;
     }
+
+    &__item {margin: 15px 40px;}
+
+    &__item::before{
+      content:'';
+      position: absolute;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: $color-primary-buttons;
+      border-radius: 10px 0;
+    }
+
+    &__photo {display: none;}
   }
 
   @include breakpoint(large) {
     .container{
       position: relative;
-      width: 100%;
-      height: 600px;
-      margin: auto;
+      min-height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -84,7 +90,6 @@
       &__content{
         width: 40%;
         height: 500px;
-        //outline: 1px solid #c22a2a;
       }
 
       &__description{
@@ -97,8 +102,6 @@
         justify-content: center;
         align-items: center;
         width: 38%;
-        height: 500px;
-        //outline: 1px solid #4555c0;
 
         & img{
           width: 530px;
@@ -108,24 +111,9 @@
         }
       }
 
-      &__list{
-        position: absolute;
-        left: 247px;
-      }
+      &__list {left: 233px;}
 
-      &__item{
-        margin: 15px 0;
-      }
-
-      &__item::before{
-        content:'';
-        position: absolute;
-        left:-43px;
-        width: 30px;
-        height: 30px;
-        background: #7A66CC;
-        border-radius: 10px 0;
-      }
+      &__item::before {left:191px;}
     }
   }
 </style>

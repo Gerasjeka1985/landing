@@ -29,9 +29,7 @@
   .nav{
     display: none;
 
-    &__list{
-      list-style-type: none;
-    }
+    &__list {list-style-type: none;}
 
     &__item{
       cursor: pointer;

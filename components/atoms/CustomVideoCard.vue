@@ -10,7 +10,7 @@
 <template>
   <div class="card" v-for="item in videos" :key="item.id">
       <div class="card__video">
-          <video controls :src="item.name" type="video/mp4"></video>
+          <video controls :src="item.name"></video>
       </div>
       <div class="card__description">
           <h2 class="card__title">{{ item.title }}</h2>
@@ -27,20 +27,17 @@
 <style scoped lang="scss">
   @import 'assets/scss/_global.scss';
   .card{
-    z-index: 23;
-    //margin: 10px 0;
-    color: white;
-    width: 250px;
-    min-height: 380px;
-    background: #2F2B2B;
     border-radius: 30px 0;
+    background: $color-primary-card-background;
+    color: $color-primary-white;
+    min-height: 380px;
+    width: 250px;
 
     &__video{
       width: 100%;
 
       & video{
         width: 100%;
-        height: 100%;
         border-radius: 30px 0 30px 0;
       }
     }
