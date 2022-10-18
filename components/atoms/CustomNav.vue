@@ -34,19 +34,20 @@
     &__item{
       cursor: pointer;
       text-decoration: none;
-      color: white;
+      color: $color-primary-white;
     }
   }
 
   @include breakpoint(large) {
     .nav{
+      z-index: 12;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
       height: 70px;
-      background-color:$color-primary-deep-purple;
       border-radius: 0;
+      background-color:$color-primary-deep-purple;
 
       &__list{
         display: flex;

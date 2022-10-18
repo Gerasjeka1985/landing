@@ -44,7 +44,7 @@
 
   .container{
     width: 100%;
-    min-height: 10%;
+    min-height: 100px;
     background-color: $color-primary-deep-purple;
     color: $color-primary-gray;
 

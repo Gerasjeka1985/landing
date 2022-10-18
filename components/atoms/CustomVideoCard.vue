@@ -30,6 +30,7 @@
     border-radius: 30px 0;
     background: $color-primary-card-background;
     color: $color-primary-white;
+    margin-top: 10px;
     min-height: 380px;
     width: 250px;
 
@@ -56,6 +57,7 @@
 @include breakpoint(large) {
   .card{
     margin-right: 10px;
+    margin-top: 0;
     width: 350px;
     height: 473px;
     background: #2F2B2B;

@@ -16,10 +16,10 @@
 @import 'assets/scss/_global.scss';
 .content{
   width: 100%;
-  height: 100vh;
+  min-height: 500px;
 }
 
 
 @include breakpoint(large) {}
-
+.content {width: 100%;}
 </style>

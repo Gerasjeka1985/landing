@@ -42,8 +42,12 @@
   //-------------------------->
 
   .burger-menu{
+    display: contents; //любопытное свойство
+    width: 60px;
+    height: 60px;
 
     &__button{
+      z-index: 12;
       position: fixed;
       top: 10px;
       left: 10px;
@@ -77,9 +81,6 @@
   }
 
   @include breakpoint(large) {
-    .burger-menu{
-
-      &__button {display: none;}
-    }
+    .burger-menu {display: none;}
   }
 </style>

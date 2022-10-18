@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import CustomMainPhoto from "~/components/atoms/CustomMainPhoto.vue";
   import BurgerMenu from "~/components/atoms/burgerMenu.vue";
   import CustomNav from "~/components/atoms/CustomNav.vue";
   import {CustomNavLinks} from "~/types/links";
@@ -49,9 +48,12 @@
       <h1 class="header__title">
         {{title}}
       </h1>
-      <custom-nav :links="links" class="header__nav" v-bind:class="{'visible' : isVisible}" />
+      <custom-nav
+          :links="links"
+          class="header__nav"
+          v-bind:class="{'visible' : isVisible}"
+      />
       <burger-menu  @click="visibleHandler" class="header__burger" />
-      <custom-main-photo class="header__photo" />
   </div>
 </template>
 
@@ -60,6 +62,7 @@
 
   //style for nav visible by btn click
   .visible{
+    z-index: 12;
     position: fixed;
     top: 0;
     left: 0;
@@ -75,17 +78,13 @@
   //----------------------------------
   .header{
     width: 100%;
-    min-height: 999px;
-    position: relative;
 
-    &__title{
-      display: none;
-    }
+    &__title {display: none;}
   }
 
 @include breakpoint(large) {
   .header{
-    min-height: 1064px;
+    min-height: 70px;
 
     &__title{
       display: block;
