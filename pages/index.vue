@@ -5,6 +5,12 @@
   import CustomFooter from "~/components/templates/CustomFooter.vue";
   import CustomPhotos from "~/components/moleculas/CustomPhotos.vue";
   import CustomTracks from "~/components/moleculas/CustomTracks.vue";
+  // import {useDataStore} from "~/store/data";
+  // import {computed} from "vue";
+  //
+  // const store = useDataStore();
+  // await store.getTestImg();
+  // const pic = computed(() => store.pict);
 </script>
 
 <template>

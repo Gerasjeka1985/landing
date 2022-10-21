@@ -16,7 +16,7 @@
       img: "../assets/images/bird.svg"
     }
   ];
-  const logo = "../assets/images/logo.svg";
+  const logo = "../assets/images/logo.webp";
 </script>
 
 <template>
@@ -35,7 +35,7 @@
       <h3>ARTIST NAME : {{name}}</h3>
       <h3>EMAIL ADDRESS : {{email}}</h3>
     </div>
-    <div class="footer__bottom">
+    <div class="footer__bottom" style="display: none">
       <ul class="footer__list">
         <li class="footer__item" v-for="item in listImg" :key="item.id">
           <img :src="item.img" alt="icon" />
@@ -65,6 +65,16 @@
       justify-content: space-evenly;
       align-items: center;
       width: 100%;
+    }
+
+    &__logo{
+      width: 70px;
+      height: 70px;
+
+      & img{
+        width: 100%;
+        height: 100%
+      }
     }
 
     &__mid h3{margin: 10px 0;}

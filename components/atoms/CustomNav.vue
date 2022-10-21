@@ -35,6 +35,15 @@
       cursor: pointer;
       text-decoration: none;
       color: $color-primary-white;
+      transition: 0.5s ease;
+
+      &:hover{
+        box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+        color: $color-primary-deep-purple;
+        background-color: $color-primary-gray;
+        border-radius: 10px;
+        padding: 5px;
+      }
     }
   }
 

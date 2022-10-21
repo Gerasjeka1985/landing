@@ -21,7 +21,7 @@
       item: "../assets/music/track5.mp3"
     }
   ];
-  const picture = "../assets/images/photo3.jpg";
+  const picture = "../assets/images/ola.webp"
 </script>
 
 <template>
@@ -33,6 +33,7 @@
       <h2 class="tracks__title">My favorite songs</h2>
       <ul class="tracks__list">
         <li class="tracks__item" v-for="track in tracks" :key="track.id">
+
           <audio controls :src="track.item" />
         </li>
       </ul>
@@ -88,6 +89,7 @@
         width: 100%;
         height: 90%;
         border-radius: 50%;
+        box-shadow: 0px -5px 10px 0px rgb(0 0 0);
       }
     }
   }

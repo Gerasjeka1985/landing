@@ -2,23 +2,23 @@
   const gallary = [
     {
       id: 1,
-      img: "../assets/images/gallary/img1.jpg"
+      img: "../assets/images/gallary/img1.webp"
     },
     {
       id: 1,
-      img: "../assets/images/gallary/img2.jpg"
+      img: "../assets/images/gallary/img2.webp"
     },
     {
       id: 1,
-      img: "../assets/images/gallary/img3.jpg"
+      img: "../assets/images/gallary/img3.webp"
     },
     {
       id: 1,
-      img: "../assets/images/gallary/img4.jpg"
+      img: "../assets/images/gallary/img4.webp"
     },
     {
       id: 1,
-      img: "../assets/images/gallary/img5.jpg"
+      img: "../assets/images/gallary/img5.webp"
     },
   ];
 </script>
@@ -64,6 +64,7 @@
         width: 100%;
         height: 100%;
         border-radius: 30px 0;
+        box-shadow: 0px -5px 10px 0px rgb(0 0 0);
       }
     }
   }

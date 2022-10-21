@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const image = '../assets/images/photo.jpg';
+  const image = '../assets/images/photo.webp';
 </script>
 
 <template>
@@ -15,6 +15,7 @@
     position: relative;
     width: 100%;
     height: 900px;
+    box-shadow: 0px -5px 10px 0px rgb(0 0 0);
 
     &__title{
      display: none;

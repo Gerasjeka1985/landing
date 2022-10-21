@@ -17,7 +17,7 @@
       name: "prefer style MetalCore"
     }
   ];
-  const picture = "https://sun9-4.userapi.com/impg/SPYot4iVtpWJgpjcpJGI3OYAiy3WXRlQLv2HLQ/FoZQDlDuOFs.jpg?size=1600x918&quality=96&sign=5068bd514f8ed6a521d4503ae5ee96f0&type=album";
+  const picture = "../assets/images/ola2.jpg";
 </script>
 
 <template>
@@ -108,6 +108,7 @@
           height: 400px;
           border-radius: 30px 0;
           object-fit: cover;
+          box-shadow: 0px -5px 10px 0px rgb(0 0 0);
         }
       }
 

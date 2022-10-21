@@ -58,15 +58,7 @@
   const props = defineProps<{
     videos: CustomVideo[]
   }>()
-  // const arr = [
-  //   {name: 'one', id: 1},
-  //   {name: 'two', id: 2},
-  //   {name: 'three', id: 3},
-  //   {name: 'four', id: 4},
-  //   {name: 'five', id: 5},
-  //   {name: 'six', id: 6},
-  //   {name: 'seven', id: 7},
-  // ];
+
 
   let offset = 0; //сещение от левго каря
   const track = ref() //сслыка на  div с классом  track
@@ -109,14 +101,14 @@
     align-items: center;
     width: 100%;
     height: 900px;
-    background-color: #330a5b;
+    background-color: $color-primary-deep-purple;
 
     &__roundabout{
       width: 80%;
       height: 760px;
       display: flex;
-      justify-content: flex-start;
-      background-color: #330a5b;
+      justify-content: center;
+      background-color: $color-primary-deep-purple;
       overflow: hidden;
     }
 
@@ -142,6 +134,7 @@
       height: 600px;
 
       &__roundabout{
+        justify-content: flex-start;
         width: 1050px;
         height: 473px;
 
